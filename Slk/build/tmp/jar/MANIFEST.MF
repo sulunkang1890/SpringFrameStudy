@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Implementation-Title: Slk
+Automatic-Module-Name: Slk
+Implementation-Version: 5.1.17.BUILD-SNAPSHOT
+Created-By: 1.8.0_112 (Oracle Corporation)
+
