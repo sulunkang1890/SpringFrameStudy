@@ -1,18 +1,23 @@
 package com.slk.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Lookup;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
-@Service
-public class TestService {
+import javax.annotation.Resource;
 
-	IService iService;
+@Component
+public abstract class  TestService {
+	//@Autowired //先通过type去注入 如果找不到在通过名字查找  通过filed.set注入  不需要提供set方法
+//	@Autowired
+//	IService slkServiceV2;
+	@Lookup
+	public abstract IService getService();
 
-	public IService getiService() {
-		return iService;
+	public void xx(){
+		this.xx();
 	}
 
-	public void setiService(IService iService) {
-		this.iService = iService;
-	}
+
 }
