@@ -1,21 +1,21 @@
-package com.slk.mapper;
+package com.slk.service;
 
 import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.beans.factory.support.GenericBeanDefinition;
 import org.springframework.stereotype.Component;
 
 /**
- * spring 后置处理器
+ * 扫描完成之后  parase解析之后  put beanDefinitionMap 之前
  */
 @Component
-public class SlkBeanFactoryPostProcessor implements BeanFactoryPostProcessor {
+public class SlkBeanFactoryPostPrcocessor implements BeanFactoryPostProcessor {
 	@Override
 	public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
-		GenericBeanDefinition testService=(GenericBeanDefinition)beanFactory.getBeanDefinition("testServiceV2");
-		//即使加入了@Autowired  testService.getAutowireMode() 也是0
-		//testService.setAutowireMode(2); //改为注解的自动装配
-		System.out.println(testService.getAutowireMode());
+		GenericBeanDefinition slkService = (GenericBeanDefinition) beanFactory.getBeanDefinition("userService");
+		slkService.setBeanClass(TestBeandefintion.class);
+
 	}
 }

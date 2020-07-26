@@ -3,7 +3,7 @@
 	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	   xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd"
-		default-autowire="byType">
+		default-autowire="byType" >
 		<!--自动装配需要加入 default-autowire
 			自动装配模型:4种 null byType byName constructor构造器
 			-->
@@ -13,7 +13,7 @@
 <!--&lt;!&ndash;				<ref bean="iService"></ref>&ndash;&gt;-->
 <!--&lt;!&ndash;			</property>&ndash;&gt;-->
 <!--		</bean>-->
-<!--		<bean id="iService" class="com.slk.service.SlkService">-->
+<!--		<bean autowire-candidate="false" id="iService" class="com.slk.service.SlkService">-->
 <!--		</bean>-->
 
 </beans>

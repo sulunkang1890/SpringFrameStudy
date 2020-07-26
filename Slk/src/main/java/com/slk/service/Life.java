@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 /**
  * IOC 容器的生命周期
  */
-@Component
+//@Component
 public class Life implements Lifecycle {
 	private boolean flag=false;
 	//显示调用

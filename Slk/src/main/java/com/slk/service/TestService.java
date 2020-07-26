@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 
-@Component
+//@Component
 public abstract class  TestService {
 	//@Autowired //先通过type去注入 如果找不到在通过名字查找  通过filed.set注入  不需要提供set方法
 //	@Autowired
