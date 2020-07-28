@@ -7,21 +7,23 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Test {
 	public static void main(String[] args) {
-		AnnotationConfigApplicationContext ac=new AnnotationConfigApplicationContext(AppConfig.class);
+		AnnotationConfigApplicationContext ac=new AnnotationConfigApplicationContext();
+		ac.register(AppConfig.class);
+		ac.refresh();
 		/**
 		 * ac.getBean <=容器.getBean===singletonObjects.et()== map.get
 		 * 容器不等于 map
 		 * singletonObjects
 		 */
-		System.out.println(ac.getBean(TestBeandefintion.class));
+//		System.out.println(ac.getBean(TestBeandefintion.class));
 		//		ac.start();
 		/**
 		 * 手动去IOC中注入对象 并且注入的对象中有依赖Sprig 容器的对象
 		 */
 //		AnnotationConfigApplicationContext ac=new AnnotationConfigApplicationContext();
 //		ac.getBeanFactory().registerSingleton("xx");
-//		ac.register(AppConfig.class);
-//		ac.refresh();
+//
+//
 //		System.out.println(ac.getBean(TestServiceV2.class).getiService().hashCode());
 //		ac.stop();
 		/**

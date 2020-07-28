@@ -10,11 +10,15 @@ import org.springframework.stereotype.Component;
 /**
  * 扫描完成之后  parase解析之后  put beanDefinitionMap 之前
  */
-@Component
+//@Component
 public class SlkBeanFactoryPostPrcocessor implements BeanFactoryPostProcessor {
 	@Override
 	public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
 		GenericBeanDefinition slkService = (GenericBeanDefinition) beanFactory.getBeanDefinition("userService");
+
+		/**
+		 * 修改原有应该被实例化的类
+		 */
 		slkService.setBeanClass(TestBeandefintion.class);
 
 	}
