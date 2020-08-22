@@ -9,11 +9,12 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Test {
 	public static void main(String[] args) {
-		AnnotationConfigApplicationContext ac=new AnnotationConfigApplicationContext(AppConfig.class);
-		SlkScanner slkScanner=new SlkScanner(ac);
-		slkScanner.addIncludeFilter(null);
-		int scan = slkScanner.scan("com.slk");
-		System.out.println(scan);
+		AnnotationConfigApplicationContext ac= new AnnotationConfigApplicationContext(AppConfig.class);
+
+//		SlkScanner slkScanner=new SlkScanner(ac);
+//		slkScanner.addIncludeFilter(null);
+//		int scan = slkScanner.scan("com.slk");
+//		System.out.println(scan);
 
 
 		/***
